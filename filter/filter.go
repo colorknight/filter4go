@@ -25,6 +25,10 @@ func ParseFilter(filter string) (Operand, error) {
 	return buildOperand(metadata)
 }
 
+func BuildFilter(metadata metadata.OperatableMetadata) (Operand, error) {
+	return buildOperand(metadata)
+}
+
 func buildOperand(meta metadata.OperatableMetadata) (Operand, error) {
 	typ := reflect.TypeOf(meta)
 	if typ.Name() == "RelationOperationMetadata" {
